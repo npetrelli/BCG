@@ -528,3 +528,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTimer: {fileID: 3716088744589379844}
   winWindow: {fileID: 3716088744462761450}
+  timer: 120
+  Sun: {fileID: 0}
+  dayCycleInMinutes: 5
