@@ -36,12 +36,22 @@ public class Movement : MonoBehaviour
 			temp += transform.forward * -1;
 			anim.Play("Rig|man_walk_in_place");
 		}
+		else if (input.x == 1)
+		{
+			temp += transform.right;
+			anim.Play("Rig|man_walk_right_root");
+		}
+		else if (input.x == -1)
+		{
+			temp += transform.right * -1;
+			anim.Play("Rig|man_walk_left_root");
+		}
 		Vector3 velocity = temp * speed;
 		velocity.y = velocityY;
 
 		controller.Move(velocity * Time.deltaTime);
 
-		if (input.z == 0)
+		if (input.z == 0 && input.x == 0)
 		{
 			velocityY = 0;
 			anim.Play("idle");
