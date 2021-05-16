@@ -1788,7 +1788,7 @@ GameObject:
   - component: {fileID: 5135186678934090232}
   - component: {fileID: 5135186678934090229}
   m_Layer: 0
-  m_Name: casual_male_unshaded
+  m_Name: man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
