@@ -12,9 +12,11 @@ public class DeathTimer : MonoBehaviour
     private static GameObject gg;
     static int counter;
     public static bool death;
+    public static bool start;
     
     void Start()
     {
+        start = false;
         gg = GameOver;
         death = false;
         instance = this;

@@ -33,6 +33,7 @@ public class MiniTimer : MonoBehaviour
             {
                 Beating beating = wall.GetComponent<Beating>();
                 data.instruments[beating.id] = false;
+                SetActive.SetDisactiveMethod(beating.id);
                 wall.SetActive(false);
                 PlayerPrefs.SetInt("Beat", 0);
                 foreach (GameObject beat in beating.walls)

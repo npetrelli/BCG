@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI  textTimer;
     public GameObject       winWindow;
     public float timer = 120.0f;
-    public bool isTimer = true;
+    public bool isTimer;
 
      
     public Transform Sun;
@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour
      // Use this for initialization
      void Start ()
      {
+         isTimer = false;
          StartTimer();
          _degreeRotation = DEGREES_PER_SECOND * DAY / (dayCycleInMinutes * MINUTE);
           Time.timeScale = 1.0f;

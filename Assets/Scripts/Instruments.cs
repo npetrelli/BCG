@@ -16,6 +16,7 @@ public class Instruments : MonoBehaviour
 		if (dist < 4)
         {
             data.instruments[id] = true;
+            SetActive.SetActiveMethod(id);
             Destroy(gameObject);
         }
     }

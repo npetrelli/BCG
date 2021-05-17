@@ -7,29 +7,37 @@ public class RoomDeath : MonoBehaviour
 {
     public GameObject[]   Walls;
     bool start;
-    int counter;    void Start()
+    int counter;
+    
+    private void Start()
     {
         start = false;
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (DeathTimer.start)
         {
-            if (start == false)
+            if (other.gameObject.tag == "Player")
             {
-                DeathTimer.StaartThisShiT();
-                start = true;
+                if (start == false)
+                {
+                    DeathTimer.StaartThisShiT();
+                    start = true;
+                }
             }
         }
     }
 
     void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (DeathTimer.start)
         {
-           DeathTimer.StopThisShit();
-           start = false;
+            if (other.gameObject.tag == "Player")
+            {
+            DeathTimer.StopThisShit();
+            start = false;
+            }
         }
     }
 }
