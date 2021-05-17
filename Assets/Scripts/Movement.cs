@@ -56,6 +56,16 @@ public class Movement : MonoBehaviour
 			}
 			Vector3 velocity = temp * speed;
 			velocity.y = velocityY;
+			if (Input.GetKeyDown(KeyCode.LeftShift))
+			{
+				speed = 15;
+				anim.speed = 2;
+			}
+			if (Input.GetKeyUp(KeyCode.LeftShift))
+			{
+				speed = 5;
+				anim.speed = 1;
+			}
 
 			if (PlayerPrefs.GetInt("Beat") == 1)
 				anim.Play("Beat");
