@@ -37,6 +37,11 @@ public class DeathTimer : MonoBehaviour
 
     static void DoStuff () {
         death = true;
+        instance.Invoke("GG", 3);
+    }
+
+    void GG()
+    {
         gg.SetActive(true);
     }
     

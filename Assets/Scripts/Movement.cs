@@ -24,13 +24,7 @@ public class Movement : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
 		anim.Play("Sit");
-		Invoke("Starting", 4);
-	}
- 
-	void Start()
-	{
-		PlayerPrefs.SetInt("Death", 0);
-		PlayerPrefs.SetInt("Beat", 0);
+		Invoke("Starting", 5);
 	}
 
 	private void Starting()
@@ -38,6 +32,8 @@ public class Movement : MonoBehaviour
 		start = true;
 		timer.StartTimer();
 		DeathTimer.start = true;
+		PlayerPrefs.SetInt("Death", 0);
+		PlayerPrefs.SetInt("Beat", 0);
 	}
 
 	void Update()
@@ -104,7 +100,7 @@ public class Movement : MonoBehaviour
 			else
 			{
 				Instantiate(data.Death[Random.Range(0, 3)], transform.position, transform.rotation);
-				Invoke("Anim", 2);
+				Invoke("Anim", 1);
 			}
 		}
 	}

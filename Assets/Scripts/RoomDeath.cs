@@ -13,9 +13,9 @@ public class RoomDeath : MonoBehaviour
         start = false;
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
             if (start == false)
             {
@@ -25,9 +25,9 @@ public class RoomDeath : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
             DeathTimer.StopThisShit();
             start = false;
