@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9010eef7c947b2a47b035c952bd35693
+guid: f989e38a9adff414181f94c8cfcaac38
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Digital-7
+  - LCD
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
