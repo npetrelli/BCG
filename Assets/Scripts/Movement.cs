@@ -52,25 +52,21 @@ public class Movement : MonoBehaviour
 				{
 					temp += transform.forward;
 					anim.Play("Walk");
-					//PlayerPrefs.SetInt("Beat", 0);
 				}
 				else if (input.z == -1)
 				{
 					temp += transform.forward * -1;
 					anim.Play("Back");
-					//PlayerPrefs.SetInt("Beat", 0);
 				}
 				else if (input.x == 1)
 				{
 					temp += transform.right;
 					anim.Play("Walk");
-					//PlayerPrefs.SetInt("Beat", 0);
 				}
 				else if (input.x == -1)
 				{
 					temp += transform.right * -1;
 					anim.Play("Walk");
-					//PlayerPrefs.SetInt("Beat", 0);
 				}
 				Vector3 velocity = temp * speed;
 				velocity.y = velocityY;
@@ -99,7 +95,8 @@ public class Movement : MonoBehaviour
 			}
 			else
 			{
-				Instantiate(data.Death[Random.Range(0, 3)], transform.position, transform.rotation);
+				int random = Random.Range(0,2);
+				Instantiate(data.Death[random], transform.position, transform.rotation);
 				Invoke("Anim", 1);
 			}
 		}
