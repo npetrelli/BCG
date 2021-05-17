@@ -46,6 +46,7 @@ public class Timer : MonoBehaviour
             {
                 StopTimer();
                 winWindow.SetActive(true);
+                StopAllCoroutines();
             }
             DisplayTime();
             Sun.Rotate(new Vector3(_degreeRotation, 0, 0) * Time.deltaTime);
