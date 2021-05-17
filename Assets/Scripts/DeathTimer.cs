@@ -9,9 +9,11 @@ public class DeathTimer : MonoBehaviour
     private static TextMeshProUGUI  text;
     private static Coroutine lastRoutine = null;
     static int counter;
+    public static bool death;
     
     void Start()
     {
+        death = false;
         instance = this;
         text = GetComponent<TextMeshProUGUI>();
         counter = 20;
@@ -29,7 +31,7 @@ public class DeathTimer : MonoBehaviour
 
 
     static void DoStuff () {
-        PlayerPrefs.SetInt("Death", 1);
+        death = true;
     }
     
     static IEnumerator Countdown (int seconds)

@@ -9,6 +9,8 @@ public class ScriptabledObject : ScriptableObject
    public Material[] material;
    public bool[]     instruments;
    public GameObject[] instrPrefab;
+
+   public string[]   audioClips = {"wood", "metal", "brick"};
 }
 
 

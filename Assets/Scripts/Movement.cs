@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
 
 	CharacterController controller;
 	Animator               anim;
+	AudioSource				audioSource;
  
 	void Start()
 	{
@@ -18,11 +19,12 @@ public class Movement : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
 		PlayerPrefs.SetInt("Beat", 0);
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update()
 	{
-		if (PlayerPrefs.GetInt("Death") != 1)
+		if (DeathTimer.death == false)
 		{
 			velocityY += gravity * Time.deltaTime;
 
@@ -71,6 +73,7 @@ public class Movement : MonoBehaviour
 		}
 		else
 		{
+			audioSource.Play();
 			anim.Play("Death");
 		}
 	}
@@ -79,7 +82,7 @@ public class Movement : MonoBehaviour
  
 	void FixedUpdate () 
 	{
-		if (PlayerPrefs.GetInt("Beat") == 0 && PlayerPrefs.GetInt("Death") == 0)
+		if (PlayerPrefs.GetInt("Beat") == 0 && DeathTimer.death == false)
 		{
 			// Generate a plane that intersects the transform's position with an upwards normal.
 			Plane playerPlane = new Plane(Vector3.up, transform.position);

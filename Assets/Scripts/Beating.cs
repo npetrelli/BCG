@@ -17,12 +17,28 @@ public class Beating : MonoBehaviour
 	public	GameObject			click;
 	[HideInInspector]public	int   id;
 	public GameObject[]		walls;
-	void OnEnable()
+	AudioSource				audioSource;
+	AudioSource				audioAppear;
+	AudioClip				clip;
+
+	private void Awake()
+	{
+		audioSource = GetComponent<AudioSource>();
+		audioAppear = gameObject.transform.GetChild(0).GetComponent<AudioSource>();
+	}
+	private void OnEnable()
     {
+		audioAppear.Play();
         int rand = Random.Range(0,3);
 		renderer.material = data.material[rand];
+		clip = Resources.Load(data.audioClips[rand]) as AudioClip;
 		id = rand;
     }
+
+	private void OnDisable()
+	{
+		audioAppear.Play();
+	}
 
 	private void OnMouseDown()
 	{
@@ -33,6 +49,16 @@ public class Beating : MonoBehaviour
 		   PlayerPrefs.SetInt("Beat", 1);
 		   miniTimer.pause = false;
 		   miniTimer.Timer();
+		   if (clip)
+		   {
+				audioSource.PlayOneShot(clip);
+				audioSource.clip = clip;
+				audioSource.Play();
+		   }
+		   else
+		   {
+			   Debug.Log("Не найден");
+		   }
 		}
 		timeAtButtonDown = timeCurrent;
 	}
@@ -48,6 +74,7 @@ public class Beating : MonoBehaviour
 				miniTimer.pause = true;
 				miniTimer.fillImage.fillAmount = 0;
 				PlayerPrefs.SetInt("Beat", 0);
+				audioSource.Stop();
 			}
 		}
 	}
