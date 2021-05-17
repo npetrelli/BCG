@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1f92154f06481554ba85e86e32930afb, type: 2}
   - {fileID: 2100000, guid: c3d6ed0de48f8024dac4065c28d162c2, type: 2}
   - {fileID: 2100000, guid: 05769f513862333428ba4602f9261515, type: 2}
-  instruments: 000101
+  instruments: 010000
   instrPrefab:
   - {fileID: 8259510716069127289, guid: 4bdf0ab691bc4e148b6ccd1d76e79db7, type: 3}
   - {fileID: 1439476856451295670, guid: f5f2270cf6738454c956c9c281d85d32, type: 3}

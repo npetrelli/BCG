@@ -14,22 +14,12 @@ public class PoolObjects : MonoBehaviour
     {
         Spawn();
     }
-
-    int NextGuess(int min, int max)
-    {
-        int theGuess = Random.Range(min, max);
-        while (alreadyGuessed.Contains(theGuess))
-            theGuess = Random.Range(min, max);
-
-        alreadyGuessed.Add(theGuess);
-        return theGuess;
-    }
-
     public void Spawn()
     {
         for (int i = 0; i < points.Length; i++)
         {
-            id = NextGuess(0, 3);
+            //Random.seed = System.DateTime.Now.Millisecond;
+            id = Random.Range(0, 3);
             count = points[i].transform.childCount;
             if (count == 0)
             {

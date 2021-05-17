@@ -664,7 +664,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 512, y: 512}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7628622609251626236
 CanvasRenderer:
@@ -892,7 +892,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 512, y: 512}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6860923777398576455
 CanvasRenderer:
@@ -1172,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3716088744462761451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1241,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3716088744462761450}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 0.8
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1518,12 +1518,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 40
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 60
-  m_fontSizeMax: 90
+  m_fontSizeMin: 40
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
@@ -2197,7 +2197,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 512, y: 512}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5578064793950960077
 CanvasRenderer:
@@ -2793,13 +2793,13 @@ MonoBehaviour:
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 90
-  m_fontSizeMax: 100
+  m_fontSizeMin: 40
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -4
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2867,7 +2867,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 512, y: 512}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &2077981704815622609
 CanvasRenderer:

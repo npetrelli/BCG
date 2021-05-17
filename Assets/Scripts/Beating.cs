@@ -20,7 +20,7 @@ public class Beating : MonoBehaviour
 	AudioSource				audioSource;
 	AudioSource				audioAppear;
 	AudioClip				clip;
-	List<int> alreadyGuessed = new List<int>();
+	List<int> used = new List<int>();
 
 	private void Awake()
 	{
@@ -30,7 +30,7 @@ public class Beating : MonoBehaviour
 	private void OnEnable()
     {
 		audioAppear.Play();
-        int rand = NextGuess(0,3);
+        int rand = Random.Range(0,3);
 		renderer.material = data.material[rand];
 		clip = Resources.Load(data.audioClips[rand]) as AudioClip;
 		id = rand;
@@ -95,13 +95,4 @@ public class Beating : MonoBehaviour
 		timeCurrent = Time.fixedTime;
 	}
 
-	int NextGuess(int min, int max)
-    {
-        int theGuess = Random.Range(min, max);
-        while (alreadyGuessed.Contains(theGuess))
-            theGuess = Random.Range(min, max);
-
-        alreadyGuessed.Add(theGuess);
-        return theGuess;
-    }
 }
