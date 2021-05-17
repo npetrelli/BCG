@@ -27,22 +27,11 @@ public class DeathTimer : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         counter = 21;
     }
-    public static void StaartThisShiT()
-    {
-        lastRoutine = instance.StartCoroutine(Countdown(21));
-        counter = 21;
-    }
-
-    public static void StopThisShit()
-    {
-        if (lastRoutine != null)
-            instance.StopCoroutine(lastRoutine);
-    }
 
 
     static void DoStuff () {
         death = true;
-        instance.Invoke("GG", 2);
+        instance.Invoke("GG", 3);
     }
 
     void GG()
@@ -50,7 +39,7 @@ public class DeathTimer : MonoBehaviour
         gg.SetActive(true);
     }
     
-    static IEnumerator Countdown (int seconds)
+    public static IEnumerator Countdown (int seconds)
     {
         counter = seconds;
         while (counter > 0 && win == false)

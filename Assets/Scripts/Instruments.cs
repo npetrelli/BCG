@@ -7,17 +7,20 @@ public class Instruments : MonoBehaviour
     public  ScriptabledObject   data;
     public  int                 id;
 
-    private void Awake() {
+    private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void OnMouseDown()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
-		if (dist < 4)
+        if (data.instruments[id] == false)
         {
-            data.instruments[id] = true;
-            SetActive.SetActiveMethod(id);
-            Destroy(gameObject);
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            if (dist < 4)
+            {
+                data.instruments[id] = true;
+                SetActive.SetActiveMethod(id);
+                Destroy(gameObject);
+            }
         }
     }
 }

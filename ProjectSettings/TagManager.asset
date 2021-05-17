@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - hand
-  - crowbar
-  - axe
   - room1
   - room2
   - room3
@@ -14,6 +11,9 @@ TagManager:
   - room5
   - room6
   - room7
+  - 1
+  - 2
+  - 3
   layers:
   - Default
   - TransparentFX

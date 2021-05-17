@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1f92154f06481554ba85e86e32930afb, type: 2}
   - {fileID: 2100000, guid: c3d6ed0de48f8024dac4065c28d162c2, type: 2}
   - {fileID: 2100000, guid: 05769f513862333428ba4602f9261515, type: 2}
-  instruments: 000100
+  instruments: 000101
   instrPrefab:
   - {fileID: 8259510716069127289, guid: 4bdf0ab691bc4e148b6ccd1d76e79db7, type: 3}
   - {fileID: 1439476856451295670, guid: f5f2270cf6738454c956c9c281d85d32, type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   Death:
   - {fileID: 1956197547661106, guid: f293a2dcc753a4a489fefe7f8f312d69, type: 3}
   - {fileID: 1314945738539566, guid: 32c9fd11a72259d45aa26ae41c34c5aa, type: 3}
-  - {fileID: 100000, guid: 735d1d1e5a1d1934589aa44da6a7ea75, type: 3}
+  - {fileID: 1820680284854294, guid: 1a1c02facd51d87458dcaa3a761e2c03, type: 3}
   audioClips:
   - wood
   - metal

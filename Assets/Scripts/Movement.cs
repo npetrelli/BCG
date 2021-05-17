@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 		Invoke("Starting", 5);
 	}
 
-	private void Starting()
+	public void Starting()
 	{
 		controller.enabled = true;
 		start = true;
@@ -104,7 +104,7 @@ public class Movement : MonoBehaviour
 				{
 					int random = Random.Range(0, 3);
 					Instantiate(data.Death[random], transform.position, transform.rotation);
-					Invoke("Anim", 1);
+					anim.Play("Death");
 					end = true;
 				}
 			}
@@ -112,11 +112,6 @@ public class Movement : MonoBehaviour
 	}
 	// speed is the rate at which the object will rotate
 	public float speed_look;
-
-	void Anim()
-	{
-		anim.Play("Death");
-	}
  
 	void FixedUpdate () 
 	{

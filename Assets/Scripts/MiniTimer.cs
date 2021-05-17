@@ -11,11 +11,13 @@ public class MiniTimer : MonoBehaviour
     public GameObject   wall;
     public bool         pause = false;
     public ScriptabledObject    data;
+    
+    public PoolObjects          poolObjects;
     public void Timer()
     {
         fillImage = GetComponent<Image>();
         time = timeAmt;
-        StartCoroutine(Countdown());
+        StartCoroutine(Countdown());  
     }
 
     private IEnumerator Countdown()
@@ -40,6 +42,7 @@ public class MiniTimer : MonoBehaviour
                     beat.SetActive(false);
                 fillImage.fillAmount = 0;
                 beating.click.SetActive(false);
+                poolObjects.Spawn();
             }
         }
     }

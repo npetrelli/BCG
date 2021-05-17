@@ -6,7 +6,8 @@ using TMPro;
 public class RoomDeath : MonoBehaviour
 {
     bool start;
-    
+    Coroutine ins;
+
     private void Start()
     {
         start = false;
@@ -19,7 +20,7 @@ public class RoomDeath : MonoBehaviour
             if (start == false)
             {
                 StopAllCoroutines();
-                DeathTimer.StaartThisShiT();
+                ins = StartCoroutine(DeathTimer.Countdown(21));
                 start = true;
             }
         }
@@ -29,8 +30,7 @@ public class RoomDeath : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StopAllCoroutines();
-            DeathTimer.StopThisShit();
+            StopCoroutine(ins);
             start = false;
         }
     }
