@@ -6478,10 +6478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 1892855778}
-  - {fileID: 1782454087}
-  - {fileID: 49162980}
 --- !u!54 &140848874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9993,10 +9989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 2111818142}
-  - {fileID: 79431814}
-  - {fileID: 622097794}
 --- !u!54 &497130305
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11474,9 +11466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 1782454087}
-  - {fileID: 2111818142}
 --- !u!54 &669749480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13913,10 +13902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 622097794}
-  - {fileID: 163603709}
-  - {fileID: 49162980}
 --- !u!54 &873191446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14852,6 +14837,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14924,6 +14910,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60.9, y: 0, z: 0}
+--- !u!82 &963194229
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1989b9c8f0a728e40817eb46784d529c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.395
+  m_Pitch: -0.22
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &966660977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19204,8 +19286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 163603709}
 --- !u!54 &1404619088
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33853,8 +33933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 1892855778}
 --- !u!54 &1848627323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36905,8 +36983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff724dafef49f2044b4c9d879a3c01c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walls:
-  - {fileID: 79431814}
 --- !u!54 &2119348950
 Rigidbody:
   m_ObjectHideFlags: 0
