@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI  textTimer;
     public GameObject       winWindow;
     public float timer = 120.0f;
-    private bool isTimer = true;
+    public bool isTimer = true;
 
      
     public Transform Sun;
@@ -39,14 +39,15 @@ public class Timer : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (isTimer)
+        if (isTimer && DeathTimer.death != true)
         {
             timer -= Time.deltaTime;
             if (timer < 0.1f)
             {
                 StopTimer();
-                winWindow.SetActive(true);
                 StopAllCoroutines();
+                Time.timeScale = 0;
+                winWindow.SetActive(true);
             }
             DisplayTime();
             Sun.Rotate(new Vector3(_degreeRotation, 0, 0) * Time.deltaTime);

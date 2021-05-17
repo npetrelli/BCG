@@ -8,11 +8,14 @@ public class DeathTimer : MonoBehaviour
     private static DeathTimer instance;
     private static TextMeshProUGUI  text;
     private static Coroutine lastRoutine = null;
+    public GameObject GameOver;
+    private static GameObject gg;
     static int counter;
     public static bool death;
     
     void Start()
     {
+        gg = GameOver;
         death = false;
         instance = this;
         text = GetComponent<TextMeshProUGUI>();
@@ -32,6 +35,7 @@ public class DeathTimer : MonoBehaviour
 
     static void DoStuff () {
         death = true;
+        gg.SetActive(true);
     }
     
     static IEnumerator Countdown (int seconds)

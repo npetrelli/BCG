@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour
 
 	CharacterController controller;
 	Animator               anim;
-	AudioSource				audioSource;
  
 	void Start()
 	{
@@ -19,7 +18,6 @@ public class Movement : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
 		PlayerPrefs.SetInt("Beat", 0);
-		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update()
@@ -73,7 +71,6 @@ public class Movement : MonoBehaviour
 		}
 		else
 		{
-			audioSource.Play();
 			anim.Play("Death");
 		}
 	}
