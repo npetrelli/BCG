@@ -26,14 +26,17 @@ public class Movement : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
 		anim.Play("Sit");
+		controller.enabled = false;
 		Invoke("Starting", 5);
 	}
 
 	private void Starting()
 	{
+		controller.enabled = true;
 		start = true;
 		timer.StartTimer();
-		DeathTimer.start = true;
+		DeathTimer.win = false;
+		DeathTimer.mainStart = true;
 		PlayerPrefs.SetInt("Death", 0);
 		PlayerPrefs.SetInt("Beat", 0);
 	}

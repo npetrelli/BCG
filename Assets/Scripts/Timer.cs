@@ -32,6 +32,7 @@ public class Timer : MonoBehaviour
          isTimer = false;
          _degreeRotation = DEGREES_PER_SECOND * DAY / (dayCycleInMinutes * MINUTE);
           Time.timeScale = 1.0f;
+          DisplayTime();
      }
 
     /// <summary>
@@ -46,8 +47,9 @@ public class Timer : MonoBehaviour
             {
                 StopTimer();
                 StopAllCoroutines();
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 winWindow.SetActive(true);
+                DeathTimer.win = true;
             }
             DisplayTime();
             Sun.Rotate(new Vector3(_degreeRotation, 0, 0) * Time.deltaTime);

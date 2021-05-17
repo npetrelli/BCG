@@ -35,4 +35,14 @@ public class MenuSystem : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void Close(GameObject gg)
+    {
+        gg.SetActive(false);
+    }
+
+    public void Open(GameObject gg)
+    {
+        gg.SetActive(true);
+    }
+
 }
