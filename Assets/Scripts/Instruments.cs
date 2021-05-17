@@ -23,4 +23,9 @@ public class Instruments : MonoBehaviour
             }
         }
     }
+
+    private void Update()
+    {
+        transform.Rotate(0, 0, 2.0f);
+    }
 }

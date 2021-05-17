@@ -24,7 +24,7 @@ public class PoolObjects : MonoBehaviour
             if (count == 0)
             {
                 GameObject newpref = Instantiate(prefabs[id], new Vector3(points[i].transform.position.x, 
-                                prefabs[id].transform.position.y, points[i].transform.position.z), Quaternion.identity);
+                                prefabs[id].transform.position.y, points[i].transform.position.z), prefabs[id].transform.rotation);
                 newpref.transform.parent = points[i].transform; 
             }
 

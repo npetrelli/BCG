@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
 
 	public void Starting()
 	{
+		for (int i = 0; i < data.instruments.Length; i++)
+			data.instruments[i] = false;
 		controller.enabled = true;
 		start = true;
 		timer.StartTimer();
