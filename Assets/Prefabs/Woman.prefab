@@ -2312,6 +2312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   gravity: -9
+  timer: {fileID: 0}
+  data: {fileID: 11400000, guid: a684ade749c7a6a43975942ad5a65f53, type: 2}
   speed_look: 10
 --- !u!136 &4699749689985037628
 CapsuleCollider:

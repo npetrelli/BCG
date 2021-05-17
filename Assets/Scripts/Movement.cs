@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 	CharacterController controller;
 	Animator               anim;
 	bool					start;
+	public ScriptabledObject	data;
 	
 	/// <summary>
 	/// Awake is called when the script instance is being loaded.
@@ -23,7 +24,7 @@ public class Movement : MonoBehaviour
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
 		anim.Play("Sit");
-		Invoke("Starting", 6);
+		Invoke("Starting", 4);
 	}
  
 	void Start()
@@ -102,12 +103,18 @@ public class Movement : MonoBehaviour
 			}
 			else
 			{
-				anim.Play("Death");
+				Instantiate(data.Death[Random.Range(0, 3)], transform.position, transform.rotation);
+				Invoke("Anim", 2);
 			}
 		}
 	}
 	// speed is the rate at which the object will rotate
 	public float speed_look;
+
+	void Anim()
+	{
+		anim.Play("Death");
+	}
  
 	void FixedUpdate () 
 	{

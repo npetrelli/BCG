@@ -5,7 +5,6 @@ using TMPro;
 
 public class RoomDeath : MonoBehaviour
 {
-    public GameObject[]   Walls;
     bool start;
     int counter;
     
@@ -16,28 +15,22 @@ public class RoomDeath : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (DeathTimer.start)
+        if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
+            if (start == false)
             {
-                if (start == false)
-                {
-                    DeathTimer.StaartThisShiT();
-                    start = true;
-                }
+                DeathTimer.StaartThisShiT();
+                start = true;
             }
         }
     }
 
     void OnCollisionExit(Collision other)
     {
-        if (DeathTimer.start)
+        if (other.gameObject.tag == "Player")
         {
-            if (other.gameObject.tag == "Player")
-            {
             DeathTimer.StopThisShit();
             start = false;
-            }
         }
     }
 }

@@ -30,7 +30,6 @@ public class Timer : MonoBehaviour
      void Start ()
      {
          isTimer = false;
-         StartTimer();
          _degreeRotation = DEGREES_PER_SECOND * DAY / (dayCycleInMinutes * MINUTE);
           Time.timeScale = 1.0f;
      }

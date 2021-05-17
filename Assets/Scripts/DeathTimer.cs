@@ -50,6 +50,6 @@ public class DeathTimer : MonoBehaviour
             int second = Mathf.FloorToInt(counter - minutes * 60);
             text.text = string.Format("{0:00}:{1:00}", minutes, second);
         }
-        DoStuff ();
+        DoStuff();
     }
 }
