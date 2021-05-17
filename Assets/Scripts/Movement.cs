@@ -14,12 +14,14 @@ public class Movement : MonoBehaviour
 	Animator               anim;
 	bool					start;
 	public ScriptabledObject	data;
+	private bool				end;
 	
 	/// <summary>
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake()
 	{
+		end = false;
 		start = false;
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
@@ -38,66 +40,70 @@ public class Movement : MonoBehaviour
 
 	void Update()
 	{
-		if (start)
+		if (!end)
 		{
-			if (DeathTimer.death == false)
+			if (start)
 			{
-				velocityY += gravity * Time.deltaTime;
+				if (DeathTimer.death == false)
+				{
+					velocityY += gravity * Time.deltaTime;
 
-				Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-				input = input.normalized;
+					Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+					input = input.normalized;
 
-				Vector3 temp = Vector3.zero;
-				if (input.z == 1)
-				{
-					temp += transform.forward;
-					anim.Play("Walk");
-				}
-				else if (input.z == -1)
-				{
-					temp += transform.forward * -1;
-					anim.Play("Back");
-				}
-				else if (input.x == 1)
-				{
-					temp += transform.right;
-					anim.Play("Walk");
-				}
-				else if (input.x == -1)
-				{
-					temp += transform.right * -1;
-					anim.Play("Walk");
-				}
-				Vector3 velocity = temp * speed;
-				velocity.y = velocityY;
-				if (Input.GetKeyDown(KeyCode.LeftShift))
-				{
-					speed = 15;
-					anim.speed = 2;
-				}
-				if (Input.GetKeyUp(KeyCode.LeftShift))
-				{
-					speed = 5;
-					anim.speed = 1;
-				}
+					Vector3 temp = Vector3.zero;
+					if (input.z == 1)
+					{
+						temp += transform.forward;
+						anim.Play("Walk");
+					}
+					else if (input.z == -1)
+					{
+						temp += transform.forward * -1;
+						anim.Play("Back");
+					}
+					else if (input.x == 1)
+					{
+						temp += transform.right;
+						anim.Play("Walk");
+					}
+					else if (input.x == -1)
+					{
+						temp += transform.right * -1;
+						anim.Play("Walk");
+					}
+					Vector3 velocity = temp * speed;
+					velocity.y = velocityY;
+					if (Input.GetKeyDown(KeyCode.LeftShift))
+					{
+						speed = 15;
+						anim.speed = 2;
+					}
+					if (Input.GetKeyUp(KeyCode.LeftShift))
+					{
+						speed = 5;
+						anim.speed = 1;
+					}
 
-				if (PlayerPrefs.GetInt("Beat") == 1)
-					anim.Play("Beat");
+					if (PlayerPrefs.GetInt("Beat") == 1)
+						anim.Play("Beat");
+					else
+					{
+						if (input.z == 0 && input.x == 0)
+						{
+							velocityY = 0;
+							anim.Play("Idle");
+						}
+					}
+					controller.Move(velocity * Time.deltaTime);
+				}
 				else
 				{
-					if (input.z == 0 && input.x == 0)
-					{
-						velocityY = 0;
-						anim.Play("Idle");
-					}
+					int random = Random.Range(0, 3);
+					Instantiate(data.Death[random], transform.position, transform.rotation);
+					Invoke("Anim", 1);
+					end = true;
 				}
-				controller.Move(velocity * Time.deltaTime);
-			}
-			else
-			{
-				int random = Random.Range(0,2);
-				Instantiate(data.Death[random], transform.position, transform.rotation);
-				Invoke("Anim", 1);
 			}
 		}
 	}
