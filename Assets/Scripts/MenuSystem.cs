@@ -32,7 +32,7 @@ public class MenuSystem : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Close(GameObject gg)
@@ -43,6 +43,11 @@ public class MenuSystem : MonoBehaviour
     public void Open(GameObject gg)
     {
         gg.SetActive(true);
+    }
+
+    public void LoadGame(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
 }
