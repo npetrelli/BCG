@@ -45,7 +45,7 @@ public class Beating : MonoBehaviour
 	{
 		float dist = Vector3.Distance(Person.transform.position, transform.position);
 		Debug.Log(dist);
-		if (dist < 3 && data.instruments[id])
+		if (dist < 5 && data.instruments[id])
 		{
 		   PlayerPrefs.SetInt("Beat", 1);
 		   miniTimer.pause = false;

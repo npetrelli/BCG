@@ -6,20 +6,23 @@ public class Instruments : MonoBehaviour
     private GameObject  player;
     public  ScriptabledObject   data;
     public  int                 id;
+    private AudioSource         audioSource;
 
-    private void Start() {
+    private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnMouseDown()
     {
         if (data.instruments[id] == false)
         {
             float dist = Vector3.Distance(player.transform.position, transform.position);
-            if (dist < 4)
+            if (dist < 5)
             {
                 data.instruments[id] = true;
                 SetActive.SetActiveMethod(id);
-                Destroy(gameObject);
+                audioSource.Play();
+                Destroy(gameObject, 0.1f);
             }
         }
     }

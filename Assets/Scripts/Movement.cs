@@ -25,13 +25,12 @@ public class Movement : MonoBehaviour
 		start = false;
 		controller = GetComponent<CharacterController>();
 		anim = GetComponent<Animator>();
-		anim.Play("Sit");
 		controller.enabled = false;
-		Invoke("Starting", 5);
 	}
 
 	public void Starting()
 	{
+		anim.Play("Sit");
 		for (int i = 0; i < data.instruments.Length; i++)
 			data.instruments[i] = false;
 		controller.enabled = true;
@@ -81,7 +80,7 @@ public class Movement : MonoBehaviour
 					velocity.y = velocityY;
 					if (Input.GetKeyDown(KeyCode.LeftShift))
 					{
-						speed = 15;
+						speed = 10;
 						anim.speed = 2;
 					}
 					if (Input.GetKeyUp(KeyCode.LeftShift))
